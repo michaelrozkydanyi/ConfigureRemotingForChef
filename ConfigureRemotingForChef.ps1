@@ -3,7 +3,7 @@ $fwtest1 = netsh advfirewall firewall show rule name="Allow WinRM HTTP"
 $fwtest2 = netsh advfirewall firewall show rule name="Allow WinRM HTTP" profile=any
 If ($fwtest1.count -lt 5)
 {
-    echo "Adding firewall rule to allow WinRM HTTP."
+    echo "Some new text! Adding firewall rule to allow WinRM HTTP."
     netsh advfirewall firewall add rule profile=any name="Allow WinRM HTTP" dir=in localport=5985 protocol=TCP action=allow
 }
 ElseIf (($fwtest1.count -ge 5) -and ($fwtest2.count -lt 5))
